@@ -1,0 +1,40 @@
+@use "../../../styles.scss" as s;
+
+.transition-section {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: none;
+
+  @include s.tablet {
+    div:nth-last-child(2) {
+      display: none;
+    }
+  }
+
+  @include s.mobile {
+    div:nth-last-child(2),
+    div:nth-last-child(3) {
+      display: none;
+    }
+  }
+}
+
+.divs-props {
+  background-color: var(--yellow);
+  transform: translateY(100%);
+}
+
+.div-big {
+  @extend .divs-props;
+  flex-grow: 1;
+}
+
+.div-small {
+  @extend .divs-props;
+  flex-basis: var(--col-gap);
+}

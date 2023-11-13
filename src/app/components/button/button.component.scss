@@ -1,0 +1,69 @@
+.transparent {
+  // margin: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  font-family: "Blatant";
+  font-size: 1em;
+  border: 1px solid rgba(193, 187, 187, 0.326);
+  background-color: rgba(101, 109, 120, 0.386);
+  color: white;
+  border-radius: 2px;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgba(101, 109, 120, 0.779);
+  }
+}
+
+.blue {
+  @extend .transparent;
+  background-color: rgba(49, 49, 184, 0.57);
+
+  &:hover {
+    background-color: rgba(49, 49, 184, 0.788);
+  }
+}
+
+.red {
+  @extend .transparent;
+  background-color: rgba(255, 0, 0, 0.851);
+
+  &:hover {
+    background-color: rgba(255, 0, 0, 0.708);
+  }
+}
+
+.green {
+  @extend .transparent;
+  background-color: rgba(47, 190, 47, 0.796);
+
+  &:hover {
+    background-color: rgba(47, 190, 47, 0.695);
+  }
+}
+
+.yellow {
+  @extend .transparent;
+  background-color: var(--yellow);
+
+  &:hover {
+    background-color: var(--yellowOpacity);
+  }
+}
+
+.black {
+  @extend .transparent;
+
+  background-color: black;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.814);
+  }
+}
+
+.orange {
+  @extend .transparent;
+
+  background-color: var(--orange);
+  &:hover {
+    background-color: var(--orangeOpacity);
+  }
+}

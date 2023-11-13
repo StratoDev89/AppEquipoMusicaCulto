@@ -1,0 +1,60 @@
+<div class="container">
+  <form #loginForm="ngForm" class="form" (ngSubmit)="onSubmit(loginForm)">
+    <input
+      class="input"
+      type="text"
+      name="nick"
+      placeholder="nick..."
+      required
+      [(ngModel)]="user.nick"
+      #nickImput="ngModel"
+    />
+    <div
+      class="div-error"
+      [ngStyle]="{
+        visibility:
+          nickImput.touched || (nickImput.touched && nickImput.invalid)
+            ? 'visible'
+            : 'hidden'
+      }"
+    >
+      <p *ngIf="nickImput.errors?.['required']">Nick is required</p>
+    </div>
+
+    <input
+      class="input"
+      type="password"
+      name="password"
+      placeholder="password... "
+      required
+      [(ngModel)]="user.password"
+      #nickPassword="ngModel"
+    />
+    <div
+      class="div-error"
+      [ngStyle]="{
+        visibility:
+          nickPassword.touched || (nickPassword.touched && nickPassword.invalid)
+            ? 'visible'
+            : 'hidden'
+      }"
+    >
+      <p *ngIf="nickPassword.errors?.['required']">Password is required</p>
+    </div>
+    <div class="div-process" *ngIf="requestStatus === 'process'">
+      <p>Processing...</p>
+    </div>
+
+    <div class="buttom__container">
+      <app-button [color]="'orange'" [type]="'submit'">Log In</app-button>
+    </div>
+
+    <div
+      class="div-error"
+      style="margin-top: 0.5rem"
+      *ngIf="requestStatus === 'failed'"
+    >
+      <p>Nick or Password invalid</p>
+    </div>
+  </form>
+</div>

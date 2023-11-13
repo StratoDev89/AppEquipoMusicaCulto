@@ -1,0 +1,7 @@
+<app-slide></app-slide>
+<app-grid></app-grid>
+<app-nav></app-nav>
+<main #mainContainerRef [@routeTransition]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+  <app-page-transition></app-page-transition>
+</main>

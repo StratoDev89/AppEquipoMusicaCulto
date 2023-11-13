@@ -1,0 +1,7 @@
+<section class="section">
+  <div class="buttom-container">
+    <app-button routerLink="addNewSong" [color]="'black'">New Song</app-button>
+  </div>
+  <app-search-bar></app-search-bar>
+  <app-song *ngFor="let songItem of songs" [song]="songItem"></app-song>
+</section>

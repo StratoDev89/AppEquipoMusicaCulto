@@ -1,0 +1,69 @@
+@use "../../../styles.scss" as s;
+
+.container {
+  display: flex;
+  width: var(--single-grid-col);
+  height: 100%;
+
+  @include s.tablet {
+    width: var(--three-blocks);
+  }
+
+  @include s.mobile {
+    width: calc(var(--double-grid-col) * 2);
+  }
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 1rem;
+}
+
+.label {
+  margin: 0.5rem 0;
+  width: 30%;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px gray solid;
+  border-radius: 2px;
+  margin: 0.5rem 0;
+  font-family: "Clash Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  background-color: transparent;
+}
+
+.buttom__container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.div-error {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  text-align: center;
+  height: 1rem;
+  font-size: small;
+  font-family: "Clash Grotesk", sans-serif;
+  color: black;
+  font-weight: 800;
+}
+
+.div-process {
+  width: 100%;
+  text-align: center;
+  height: 1rem;
+  font-family: "Clash Grotesk", sans-serif;
+  color: black;
+}

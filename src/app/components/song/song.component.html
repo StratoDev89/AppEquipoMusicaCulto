@@ -1,0 +1,110 @@
+<article class="song-container">
+  <header class="song-title">
+    <h1 style="font-weight: 600">{{ song.name }}</h1>
+    <div class="options">
+      <div #img class="svg" (click)="showInfo()">
+        <img src="assets/blackArrow.png" alt="white arrow" />
+      </div>
+    </div>
+  </header>
+  <div class="song-info" *ngIf="this.isOpen">
+    <div class="info">
+      <p>Tones</p>
+      <input
+        [disabled]="isDisabled"
+        [(ngModel)]="song.tone"
+        [ngClass]="{
+          'active-editing': isEditing,
+          'disable-editing': !isEditing
+        }"
+      />
+    </div>
+    <div class="info">
+      <p>YoutubeUrl</p>
+      <input
+        [disabled]="isDisabled"
+        [(ngModel)]="song.youtubeUrl"
+        [ngClass]="{
+          'active-editing': isEditing,
+          'disable-editing': !isEditing
+        }"
+      />
+    </div>
+
+    <div class="info">
+      <p>Style</p>
+      <div class="style-div">
+        <div>
+          <input
+            name="reflexion"
+            type="radio"
+            value="reflexion"
+            [disabled]="isDisabled"
+            [(ngModel)]="song.style"
+            [checked]="song.style === 'reflexion'"
+            [ngClass]="{
+              'active-editing': isEditing,
+              'disable-editing': !isEditing
+            }"
+          />
+          <label for="reflexion">Reflexion</label>
+        </div>
+
+        <div>
+          <input
+            name="jubilo"
+            type="radio"
+            value="jubilo"
+            [disabled]="isDisabled"
+            [(ngModel)]="song.style"
+            [checked]="song.style === 'jubilo'"
+            [ngClass]="{
+              'active-editing': isEditing,
+              'disable-editing': !isEditing
+            }"
+          />
+          <label for="jubilo">Jubilo</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <p>Observations</p>
+      <textarea
+        [disabled]="isDisabled"
+        id=""
+        rows="6"
+        [(ngModel)]="song.observations"
+        [ngClass]="{
+          'active-editing': isEditing,
+          'disable-editing': !isEditing
+        }"
+      ></textarea>
+    </div>
+    <div
+      style="
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      "
+    >
+      <app-button
+        style="margin: 0.5rem"
+        [color]="'green'"
+        *ngIf="isEditing"
+        (onClick)="onSave()"
+        >Save</app-button
+      >
+      <app-button style="margin: 0.5rem" [color]="'black'" (onClick)="onEdit()"
+        >Edit</app-button
+      >
+      <app-button style="margin: 0.5rem" [color]="'red'" (onClick)="onDelete()"
+        >Delete</app-button
+      >
+    </div>
+    <div class="auth-msg" style="" *ngIf="!canEdit">
+      <p>Go to login first</p>
+    </div>
+  </div>
+</article>

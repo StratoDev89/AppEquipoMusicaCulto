@@ -1,0 +1,30 @@
+<div class="container">
+  <form #addVerseForm="ngForm" class="form" (ngSubmit)="onSave()">
+    <div>
+      <label class="label" for="name">Title</label>
+      <input
+        class="input"
+        type="text"
+        name="name"
+        required
+        [(ngModel)]="newVerse.name"
+      />
+    </div>
+    <div>
+      <label class="label" for="text">Text</label>
+      <textarea
+        class="textarea"
+        name="text"
+        rows="5"
+        required
+        [(ngModel)]="newVerse.text"
+      ></textarea>
+    </div>
+
+    <div class="buttom-container">
+      <button class="buttom" type="submit" [disabled]="addVerseForm.invalid">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

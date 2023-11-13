@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Space+Grotesk&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,700,400,600,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+@font-face {
+  font-family: "Blatant", sans-serif;
+  src: url("./assets/fonts/Blatant-Bold.otf");
+}
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  // background-image: url("assets/bg.png");
+  background-color: black;
+  color: white;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+:root {
+  --yellow: #e6cf04;
+  --yellowOpacity: rgb(206, 186, 5, 0.814);
+  --orange: #fe4f31;
+  --orangeOpacity: rgb(254, 79, 49, 0.814);
+  --clearBg: rgb(231, 233, 235);
+  --color-div: rgba(159, 161, 163, 0.393);
+  --col-gap: max(1.75em, 1.75vw);
+  --three-blocks: calc(((100vw - (var(--col-gap) * 2)) / 5 * 3));
+  --single-grid-col: calc(var(--three-blocks) / 3);
+  --double-grid-col: calc(var(--single-grid-col) * 2);
+
+  --main-navigation-height: 4.6em;
+}
+
+// resposive mixings
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media screen and (max-width: 389px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 481px) and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin middle-desktop {
+  @media (min-width: 961px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+
+@mixin std-height {
+  @media (min-height: 520px) and (max-height: 600px) {
+    @content;
+  }
+}

@@ -1,0 +1,52 @@
+<div class="search-bar">
+  <div class="search-container">
+    <div class="filter-options">
+      <div class="search-options-top">
+        <label for="title">Filter by Title</label>
+        <input name="title" type="text" [(ngModel)]="title" />
+      </div>
+      <div class="search-options-bottom">
+        <label id="firstLabel" for="style">Filter by Style</label>
+
+        <div class="radio-container">
+          <div class="option-div">
+            <label for="jubilo">Jubilo</label>
+            <input
+              name="style"
+              type="radio"
+              value="jubilo"
+              checked="false"
+              [(ngModel)]="style"
+            />
+          </div>
+
+          <div class="option-div">
+            <label for="reflexion">Reflexion</label>
+            <input
+              name="style"
+              type="radio"
+              value="reflexion"
+              checked="false"
+              [(ngModel)]="style"
+            />
+          </div>
+
+          <div class="option-div">
+            <label for="jubilo">None</label>
+            <input
+              name="style"
+              type="radio"
+              value=""
+              checked="false"
+              [(ngModel)]="style"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-buttom">
+      <app-button [color]="'orange'" (onClick)="onSearch()">Search</app-button>
+    </div>
+  </div>
+</div>

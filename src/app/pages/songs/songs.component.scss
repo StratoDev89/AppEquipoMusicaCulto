@@ -1,0 +1,28 @@
+@use "../../../styles.scss" as s;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 0;
+  background-color: var(--clearBg);
+}
+
+.buttom-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: var(--three-blocks);
+  margin: 1rem 0;
+
+  @include s.tablet {
+    width: calc(var(--single-grid-col) * 5);
+  }
+
+  @include s.mobile {
+    width: calc(var(--single-grid-col) * 5);
+  }
+}

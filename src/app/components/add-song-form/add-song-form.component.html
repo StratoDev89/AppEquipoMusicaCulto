@@ -1,0 +1,73 @@
+<div class="container">
+  <form #addSongForm="ngForm" class="form" (ngSubmit)="onSave()">
+    <div>
+      <label class="label" for="title">Title</label>
+      <input
+        class="input"
+        type="text"
+        name="title"
+        required
+        [(ngModel)]="newSong.name"
+      />
+    </div>
+    <div>
+      <label class="label" for="tones">Tones</label>
+      <input
+        class="input"
+        type="text"
+        name="tones"
+        required
+        [(ngModel)]="newSong.tone"
+      />
+    </div>
+    <div>
+      <label class="label" for="youtubeUrl">Youtube Url</label>
+      <input
+        class="input"
+        type="text"
+        name="youtubeUrl"
+        required
+        [(ngModel)]="newSong.youtubeUrl"
+      />
+    </div>
+    <div>
+      <label class="label" for="style">Style</label>
+      <div class="style-div">
+        <div>
+          <input
+            class="radio-input"
+            name="reflexion"
+            type="radio"
+            value="reflexion"
+            [(ngModel)]="newSong.style"
+          />
+          <label for="reflexion">Reflexion</label>
+        </div>
+
+        <div>
+          <input
+            class="radio-input"
+            name="jubilo"
+            type="radio"
+            value="jubilo"
+            [(ngModel)]="newSong.style"
+          />
+          <label for="jubilo">Jubilo</label>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label class="label" for="observations">Observations</label>
+      <textarea
+        class="textarea"
+        name="observations"
+        rows="5"
+        required
+        [(ngModel)]="newSong.observations"
+      ></textarea>
+    </div>
+    <div class="buttom-container">
+      <app-button [color]="'orange'">Save</app-button>
+    </div>
+  </form>
+</div>

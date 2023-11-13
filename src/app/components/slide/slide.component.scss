@@ -1,0 +1,51 @@
+@use "../../../styles.scss" as s;
+
+.section-slide {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  @include s.tablet {
+    div:nth-last-child(2) {
+      display: none;
+    }
+  }
+
+  @include s.mobile {
+    div:nth-last-child(2),
+    div:nth-last-child(3) {
+      display: none;
+    }
+  }
+}
+
+.div {
+  background-color: var(--yellow);
+  z-index: 10;
+  flex-grow: 1;
+}
+
+.div-small {
+  background-color: var(--yellow);
+  z-index: 10;
+  flex-basis: var(--col-gap);
+}
+
+.img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6rem;
+  z-index: 15;
+  transform: translate(-50%, -50%);
+  opacity: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}

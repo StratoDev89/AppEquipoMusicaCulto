@@ -1,0 +1,13 @@
+<article *ngIf="verse" class="info-verse">
+  <div class="name">
+    <h2>{{ verse.name }}</h2>
+  </div>
+  <div class="text">
+    <p>{{ verse.text }}</p>
+  </div>
+  <div class="edit-options">
+    <app-button [color]="'red'" (click)="onDelete(verse._id)"
+      >Delete</app-button
+    >
+  </div>
+</article>

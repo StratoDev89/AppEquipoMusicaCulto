@@ -1,0 +1,11 @@
+<section class="section">
+  <div class="buttom-container">
+    <app-button routerLink="addNewVerse" [color]="'yellow'"
+      >Add new Verse</app-button
+    >
+  </div>
+  <app-single-verse
+    *ngFor="let verse of verses"
+    [verse]="verse"
+  ></app-single-verse>
+</section>

@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--three-blocks);
+    height: 100vh;
+    margin-top: 2rem;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    row-gap: 1rem;
+    height: fit-content;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 1em;
+    border: 1px gray solid;
+    border-radius: 10px;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .label {
+    width: 100%;
+  
+  }
+  
+  .input {
+    padding: 0.5rem;
+    width: 100%;
+    min-height: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: .3rem;
+  }
+
+  .buttom-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttom {
+    padding: 0.5rem 1rem;
+    background-color: rgb(69, 69, 221);
+    border-radius: 15px;
+    width: 50%;
+    margin: 0.5rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1em;
+    color: white;
+  }
+
+  .textarea {
+    resize: none;
+    padding: 0.5rem;
+    width: 100%;
+    min-height: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: .3rem;
+
+  }

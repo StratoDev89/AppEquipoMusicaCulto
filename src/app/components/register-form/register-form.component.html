@@ -1,0 +1,103 @@
+<div class="container">
+  <ng-container *ngIf="!newUser; else signupSuccessfully">
+    <form
+      #registerForm="ngForm"
+      class="form"
+      (ngSubmit)="onRegister(registerForm)"
+    >
+      <input
+        class="input"
+        type="text"
+        name="nick"
+        required="true"
+        pattern="^[A-Za-z]+$"
+        minlength="3"
+        placeholder="nick..."
+        [(ngModel)]="user.nick"
+        #nickImput="ngModel"
+      />
+      <div
+        class="div-error"
+        [ngStyle]="{
+          visibility:
+            nickImput.touched || (nickImput.touched && nickImput.invalid)
+              ? 'visible'
+              : 'hidden'
+        }"
+      >
+        <p *ngIf="nickImput.errors?.['required']">Nick is required</p>
+        <p *ngIf="nickImput.errors?.['pattern']">Nick must be only letters</p>
+        <p *ngIf="nickImput.errors?.['minlength']">
+          Nick must be at least 3 chart
+        </p>
+      </div>
+
+      <input
+        class="input"
+        type="password"
+        name="password"
+        placeholder="password..."
+        required
+        minlength="6"
+        [(ngModel)]="user.password"
+        #passwordInput="ngModel"
+      />
+      <div
+        class="div-error"
+        [ngStyle]="{
+          visibility:
+            passwordInput.touched ||
+            (passwordInput.touched && passwordInput.invalid)
+              ? 'visible'
+              : 'hidden'
+        }"
+      >
+        <p *ngIf="passwordInput.errors?.['required']">Password is required</p>
+        <p *ngIf="passwordInput.errors?.['minlength']">
+          Password must be at least 6 chart
+        </p>
+      </div>
+
+      <input
+        class="input"
+        type="password"
+        name="adminPassword"
+        placeholder="admin password..."
+        required
+        [(ngModel)]="user.adminPassword"
+        #adminPasswordInput="ngModel"
+      />
+      <div
+        class="div-error"
+        [ngStyle]="{
+          visibility:
+            adminPasswordInput.touched ||
+            (adminPasswordInput.touched && adminPasswordInput.invalid)
+              ? 'visible'
+              : 'hidden'
+        }"
+      >
+        <p *ngIf="passwordInput.errors?.['required']">
+          Admin Password is required
+        </p>
+      </div>
+
+      <div class="buttom__container">
+        <app-button [color]="'orange'" [type]="'submit'">Register</app-button>
+      </div>
+
+      <div class="div-error" style="margin-top: .5rem;" *ngIf="requestStatus === 'failed'">
+        <p>Nick or admin Password invalid</p>
+      </div>
+    </form>
+  </ng-container>
+</div>
+
+<ng-template #signupSuccessfully>
+  <div class="success-container">
+    <p>
+      Hello, {{ newUser?.nick }}, Your account has been created successfully,
+      you can log in now.
+    </p>
+  </div>
+</ng-template>
