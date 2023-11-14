@@ -24,6 +24,7 @@ export class NavComponent implements OnInit {
 
   // Declare variables to check background based on current path
   routeColorMap: { [key: string]: boolean } = {
+    '/': true,
     '/home': true,
     '/songs': false,
     '/register': false,
@@ -59,6 +60,7 @@ export class NavComponent implements OnInit {
     this.router.events.subscribe((event) => {
       // It is necessary to filter the router events by the last one
       if (event instanceof NavigationEnd) {
+
         this.isClear = this.routeColorMap[event.url];
       }
     });

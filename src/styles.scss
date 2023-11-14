@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Space+Grotesk&display=swap");
 @import url("https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,700,400,600,300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
 
 @font-face {
-  font-family: "Blatant", sans-serif;
-  src: url("assets/fonts/Blatant-Bold.otf");
+  font-family: "Blatant";
+  src: url("assets/fonts/Blatant-Bold.woff2") format("woff2");
 }
 
 // reset
@@ -83,7 +83,6 @@ main {
     @content;
   }
 }
-
 
 @mixin std-height {
   @media (min-height: 520px) and (max-height: 600px) {
