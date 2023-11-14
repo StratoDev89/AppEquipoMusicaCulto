@@ -93,6 +93,16 @@
   }
 }
 
+a {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-family: "Clash Grotesk", sans-serif;
+  color: black;
+  font-weight: 400;
+  background-color: rgb(190, 187, 187);
+}
+
 .style-div {
   display: flex;
   justify-content: flex-start;

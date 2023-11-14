@@ -19,16 +19,23 @@
         }"
       />
     </div>
+
     <div class="info">
       <p>YoutubeUrl</p>
-      <input
+      <a
+        [href]="song.youtubeUrl"
+        target="_blank"
+        *ngIf="!isEditing; else editMode"
+        >{{ song.youtubeUrl }}</a
+      >
+      <!-- <input
         [disabled]="isDisabled"
         [(ngModel)]="song.youtubeUrl"
         [ngClass]="{
           'active-editing': isEditing,
           'disable-editing': !isEditing
         }"
-      />
+      /> -->
     </div>
 
     <div class="info">
@@ -108,3 +115,14 @@
     </div>
   </div>
 </article>
+
+<ng-template #editMode>
+  <input
+    [disabled]="isDisabled"
+    [(ngModel)]="song.youtubeUrl"
+    [ngClass]="{
+      'active-editing': isEditing,
+      'disable-editing': !isEditing
+    }"
+  />
+</ng-template>
