@@ -27,6 +27,7 @@
 .divs-props {
   background-color: var(--yellow);
   transform: translateY(100%);
+  -webkit-transform: translateY(100%);
 }
 
 .div-big {
