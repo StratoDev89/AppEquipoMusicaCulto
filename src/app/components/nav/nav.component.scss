@@ -44,12 +44,16 @@
   z-index: 10;
   transition: all 0.2s ease;
 
-  @include s.mobile {
-    padding: 1rem 1.5rem;
-  }
-
   &:hover {
     color: rgb(254, 252, 252);
+  }
+
+  @include s.mobile {
+    padding: 1rem 1rem;
+
+    &:hover {
+      color: black;
+    }
   }
 }
 
