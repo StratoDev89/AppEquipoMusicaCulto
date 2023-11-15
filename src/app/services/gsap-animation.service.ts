@@ -13,6 +13,8 @@ export class GsapAnimationService {
   constructor() {}
 
   isIntroDivsAnimationComplete$ = new BehaviorSubject<boolean>(false);
+  initSlider = new BehaviorSubject<boolean>(false);
+  initSlider$ = this.initSlider.asObservable();
   transitionTimeLine = gsap.timeline({ paused: true });
 
   introDivsAnimation(
@@ -40,6 +42,7 @@ export class GsapAnimationService {
         gsap.to(section, {
           display: 'none',
         });
+        this.initSlider.next(true);
       },
       onUpdate: () => {
         if (!controlFlag && tl.progress() >= 0.55) {
@@ -117,8 +120,8 @@ export class GsapAnimationService {
     });
   }
 
-  revealLogoAnimation(logo: HTMLImageElement, text: HTMLHeadElement) {
-    gsap.to([logo, text], {
+  revealLogoAnimation(logo: HTMLImageElement | HTMLDivElement) {
+    gsap.to(logo, {
       y: 0,
       duration: 1.1,
       ease: CustomEase.get('custom2'),

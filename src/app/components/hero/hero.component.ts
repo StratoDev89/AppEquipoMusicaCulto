@@ -10,7 +10,6 @@ import {
 import { GsapAnimationService } from 'src/app/services/gsap-animation.service';
 import { SavedVerse } from 'src/app/utils/verses-dto';
 
-
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
@@ -24,9 +23,6 @@ export class HeroComponent implements OnInit, AfterViewInit {
 
   @ViewChildren('spans')
   spans!: QueryList<ElementRef<HTMLDivElement>>;
-
-  @ViewChild('textTypeRef', { static: true })
-  textTypeRef!: ElementRef<HTMLHeadElement>;
 
   @ViewChild('logoOrangeRef', { static: true })
   logoOrangeRef!: ElementRef<HTMLImageElement>;
@@ -43,11 +39,6 @@ export class HeroComponent implements OnInit, AfterViewInit {
         if (isIntroComplete) {
           this.gsapService.heroTextAnimation(
             this.spans.map((span) => span.nativeElement)
-          );
-
-          this.gsapService.revealLogoAnimation(
-            this.logoOrangeRef.nativeElement,
-            this.textTypeRef.nativeElement
           );
         }
       }

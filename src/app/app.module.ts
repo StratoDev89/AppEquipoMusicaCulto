@@ -28,6 +28,10 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { MisionComponent } from './components/mision/mision.component';
 import { GridComponent } from './components/grid/grid.component';
+import { CursorComponent } from './components/cursor/cursor.component';
+import { NavItemComponent } from './components/nav-item/nav-item.component';
+import { MagneticComponent } from './components/magnetic/magnetic.component';
+import { AutoSliderComponent } from './components/auto-slider/auto-slider.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,10 @@ import { GridComponent } from './components/grid/grid.component';
     SearchBarComponent,
     MisionComponent,
     GridComponent,
+    CursorComponent,
+    NavItemComponent,
+    MagneticComponent,
+    AutoSliderComponent,
   ],
   imports: [
     BrowserModule,

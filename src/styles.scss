@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Space+Grotesk&display=swap");
 @import url("https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,700,400,600,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
+@import url('https://fonts.cdnfonts.com/css/grotesk');
 
 @font-face {
   font-family: "Blatant";
   src: url("assets/fonts/Blatant-Bold.woff2") format("woff2");
 }
+
+
 
 // reset
 * {
@@ -15,7 +18,11 @@
   font-size: 100%;
   vertical-align: baseline;
   border: none;
+  // cursor: none;
+
+
 }
+
 
 a {
   text-decoration: none;
@@ -29,8 +36,7 @@ ol {
 }
 
 body {
-  // background-image: url("assets/bg.png");
-  background-color: black;
+  background-color: rgb(231, 233, 235);
   color: white;
   scrollbar-width: none;
 }

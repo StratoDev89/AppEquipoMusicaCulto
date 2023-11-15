@@ -1,0 +1,10 @@
+<app-magnetic>
+  <li
+    #item
+    *ngIf="navItem.showWhen"
+    class="options__li"
+    (click)="navItem.onClick()"
+  >
+    <a [routerLink]="navItem.routerLink">{{ navItem.title }}</a>
+  </li>
+</app-magnetic>

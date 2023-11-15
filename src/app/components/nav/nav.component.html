@@ -1,22 +1,19 @@
 <div #navRef class="nav">
   <div class="container" [@changeNav]="isClear">
-    <div class="nav__img">
-      <img src="" alt="" />
-    </div>
     <div class="nav__options">
-      <ul class="options__ul" >
-        <ng-container *ngFor="let item of navItems">
+      <ul class="options__ul">
+        <app-magnetic *ngFor="let item of navItems">
           <li
+            (mouseover)="onMouseOver()"
+            (mouseleave)="onMouseLeave()"
+            #liRef
             *ngIf="item.showWhen"
             class="options__li"
-            (mouseenter)="onMouseEnter(bottomDiv)"
-            (mouseleave)="onMouseLeave(bottomDiv)"
             (click)="item.onClick()"
           >
             <a [routerLink]="item.routerLink">{{ item.title }}</a>
-            <div #bottomDiv class="bottom-div"></div>
           </li>
-        </ng-container>
+        </app-magnetic>
       </ul>
     </div>
   </div>

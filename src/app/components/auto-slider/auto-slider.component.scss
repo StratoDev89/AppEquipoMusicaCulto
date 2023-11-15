@@ -1,0 +1,40 @@
+@use "./../../../styles.scss" as s;
+
+.slider-text-container {
+  overflow-x: hidden;
+}
+
+.slider-track {
+  position: relative;
+  display: flex;
+  white-space: nowrap;
+  width: fit-content;
+  background-color: var(--yellow);
+  transform: translateY(100%);
+}
+
+.slider-text-container h1 {
+  color: black;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 6.5em;
+  letter-spacing: -0.1em;
+  font-family: "Grotesk", sans-serif;
+
+  @include s.tablet {
+  }
+
+  @include s.mobile {
+    font-size: 4.5em;
+  }
+}
+
+.slider-text-container h1:last-child {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+h1::selection {
+  background-color: var(--yellow);
+}

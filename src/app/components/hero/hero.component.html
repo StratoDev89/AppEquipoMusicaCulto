@@ -1,24 +1,20 @@
 <main class="main">
   <div class="main-div">
     <header class="header">
-      <div class="logo-container">
-        <img #logoOrangeRef src="assets/logoWhite.png" alt="" />
-      </div>
       <div class="text-container">
-        <h1 #textTypeRef class="text">{{ text }}</h1>
+        <app-auto-slider [text]="text"></app-auto-slider>
       </div>
     </header>
     <footer>
       <div class="span-container">
-        <img #spans src="assets/images/I.svg" alt="" />
-        <img #spans src="assets/images/E.svg" alt="" />
-        <img #spans src="assets/images/D.svg" alt="" />
-        <img #spans src="assets/images/D.svg" alt="" />
-      </div>
-      <div class="span-container">
-        <img #spans src="assets/images/S.svg" alt="" />
-        <img #spans src="assets/images/V.svg" alt="" />
-        <img #spans src="assets/images/S.svg" alt="" />
+        <picture #spans>
+          <source
+            srcset="assets/images/logoMobile.svg"
+            media="(max-width: 480px)"
+          />
+
+          <img class="img" src="assets/images/IEDDSVS.svg" alt="" />
+        </picture>
       </div>
     </footer>
   </div>

@@ -1,10 +1,17 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { CookiesService } from 'src/app/services/cookies.service';
 import { UsersService } from 'src/app/services/users.service';
 import { Payload } from 'src/app/utils/users.dto';
-import { gsap } from 'gsap';
 import { changeNav } from 'src/app/animations';
+import { NavItem } from 'src/app/models/shared.models';
+import { CursorService } from 'src/app/services/cursor.service';
 
 @Component({
   selector: 'app-nav',
@@ -12,7 +19,7 @@ import { changeNav } from 'src/app/animations';
   styleUrls: ['./nav.component.scss'],
   animations: [changeNav],
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, AfterViewInit {
   // Current user session
   user: Payload | null = null;
 
@@ -24,8 +31,8 @@ export class NavComponent implements OnInit {
 
   // Declare variables to check background based on current path
   routeColorMap: { [key: string]: boolean } = {
-    '/': true,
-    '/home': true,
+    '/': false,
+    '/home': false,
     '/songs': false,
     '/register': false,
     '/login': false,
@@ -34,20 +41,18 @@ export class NavComponent implements OnInit {
   };
 
   // Initialize navigation variables
-  navItems: {
-    title: string;
-    routerLink: string;
-    showWhen: boolean;
-    onClick: Function;
-  }[] = [];
+  navItems: NavItem[] = [];
 
   constructor(
     private cookieService: CookiesService,
     private userService: UsersService,
-    private router: Router
+    private router: Router,
+    private cursorService: CursorService
   ) {
     this.initializeNavVars();
   }
+
+  ngAfterViewInit(): void {}
 
   ngOnInit(): void {
     // Set subscription to user with session
@@ -60,7 +65,6 @@ export class NavComponent implements OnInit {
     this.router.events.subscribe((event) => {
       // It is necessary to filter the router events by the last one
       if (event instanceof NavigationEnd) {
-
         this.isClear = this.routeColorMap[event.url];
       }
     });
@@ -111,22 +115,13 @@ export class NavComponent implements OnInit {
   }
 
   // Mouse Enter Hover effect
-  onMouseEnter(div: HTMLDivElement) {
-    gsap.to(div, {
-      left: 0,
-      duration: 0.3,
-    });
+  onMouseOver() {
+    this.cursorService.isLiHovered.next(true);
   }
 
   // Mouse Leave Hover effect
-  onMouseLeave(div: HTMLDivElement) {
-    gsap.to(div, {
-      left: '100%',
-      duration: 0.3,
-      onComplete: () => {
-        gsap.set(div, { left: '-100%' });
-      },
-    });
+  onMouseLeave() {
+    this.cursorService.isLiHovered.next(false);
   }
 
   // Logout management

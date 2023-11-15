@@ -26,6 +26,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('mainContainerRef', { static: true })
   mainContainerRef!: ElementRef<HTMLDivElement>;
 
+  @ViewChild(NavComponent, { static: true })
+  navComponentRef!: NavComponent;
+
   constructor(
     private cookieService: CookiesService,
     private userService: UsersService,
@@ -36,7 +39,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     const token = this.cookieService.getToken();
 
-    
     if (token) {
       this.userService.getProfile(token).subscribe({
         next: (data) => {
