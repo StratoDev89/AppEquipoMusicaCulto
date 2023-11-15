@@ -38,6 +38,7 @@
   width: 100%;
   text-align: center;
   overflow: hidden;
+  text-wrap: nowrap;
   padding: 1rem 2rem;
   font-family: "Clash Grotesk", sans-serif;
   font-size: 1em;
@@ -49,8 +50,7 @@
   }
 
   @include s.mobile {
-    padding: 1rem 1rem;
-
+    padding: 1rem 1.5rem;
     &:hover {
       color: black;
     }
