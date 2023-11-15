@@ -5,4 +5,4 @@
   <router-outlet #outlet="outlet"></router-outlet>
   <app-page-transition></app-page-transition>
 </main>
-<app-cursor [navItemComponentRef]="navComponent"></app-cursor>
+<app-cursor *ngIf="isDesktop" [navItemComponentRef]="navComponent"></app-cursor>

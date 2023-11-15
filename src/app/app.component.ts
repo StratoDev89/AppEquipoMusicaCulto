@@ -29,6 +29,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild(NavComponent, { static: true })
   navComponentRef!: NavComponent;
 
+  isDesktop = window.innerWidth >= 961 ? true : false;
+
   constructor(
     private cookieService: CookiesService,
     private userService: UsersService,
