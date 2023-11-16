@@ -4,11 +4,11 @@
       <ul class="options__ul">
         <app-magnetic *ngFor="let item of navItems">
           <li
+            class="options__li"
             (mouseover)="onMouseOver()"
             (mouseleave)="onMouseLeave()"
             #liRef
             *ngIf="item.showWhen"
-            class="options__li"
             (click)="item.onClick()"
           >
             <a [routerLink]="item.routerLink">{{ item.title }}</a>

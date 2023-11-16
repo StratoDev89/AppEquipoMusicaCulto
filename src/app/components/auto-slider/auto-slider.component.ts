@@ -36,11 +36,7 @@ export class AutoSliderComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.gsapService.initSlider$.subscribe((isComplete) => {
-      if (isComplete) {
-        requestAnimationFrame(this.animation);
-      }
-    });
+    requestAnimationFrame(this.animation);
   }
 
   ngAfterViewInit(): void {

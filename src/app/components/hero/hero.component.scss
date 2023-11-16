@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 2rem;
-  height: fit-content;
+  max-height: calc(60vh - var(--main-navigation-height) );
   width: 100%;
 
   @include s.tablet {
@@ -47,13 +47,11 @@
   @include s.tablet {
     width: 100%;
     text-align: center;
-    margin-top: 2rem;
   }
 
   @include s.mobile {
     text-align: center;
     width: 100%;
-    margin-top: 1rem;
   }
 }
 
@@ -113,7 +111,6 @@ footer {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin-top: var(--main-navigation-height);
   padding: 1rem;
 
   @include s.tablet {
@@ -127,6 +124,6 @@ footer {
   img {
     max-width: 50%;
     height: 100%;
-    transform: translateY(100%);
+    transform: translateY(80%);
   }
 }
