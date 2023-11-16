@@ -18,6 +18,7 @@ import { SavedVerse } from 'src/app/utils/verses-dto';
 export class HeroComponent implements OnInit, AfterViewInit {
   bibleVerse: SavedVerse | null = null;
   text = 'equipo musica y culto';
+  phrases = 'Holiness - Worship - Salvation - Devotion - Praise - Gratitude - Fidelity - Joy';
 
   status: 'loading' | 'complete' = 'loading';
 

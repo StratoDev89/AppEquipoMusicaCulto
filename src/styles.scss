@@ -61,7 +61,6 @@ main {
   --three-blocks: calc(((100vw - (var(--col-gap) * 2)) / 5 * 3));
   --single-grid-col: calc(var(--three-blocks) / 3);
   --double-grid-col: calc(var(--single-grid-col) * 2);
-
   --main-navigation-height: 4.6em;
 }
 

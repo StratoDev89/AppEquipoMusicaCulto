@@ -1,8 +1,21 @@
 <main class="main">
   <div class="main-div">
     <header class="header">
+      <div class="logo-container">
+        <img #spans src="assets/logoBlack.png" alt="">
+      </div>
       <div class="text-container">
-        <app-auto-slider [text]="text"></app-auto-slider>
+        <app-auto-slider
+          [text]="phrases"
+          [direction]="1"
+          [speed]="0.06"
+          [bgColor]="'black'"
+          [fontSize]="4.5"
+        ></app-auto-slider>
+
+      </div>
+      <div class="text-container">
+        <app-auto-slider [text]="text" [speed]="0.08"></app-auto-slider>
       </div>
     </header>
     <footer>

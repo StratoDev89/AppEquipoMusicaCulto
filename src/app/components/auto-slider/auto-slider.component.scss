@@ -1,7 +1,7 @@
 @use "./../../../styles.scss" as s;
 
 .slider-text-container {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .slider-track {
@@ -9,15 +9,22 @@
   display: flex;
   white-space: nowrap;
   width: fit-content;
-  background-color: var(--yellow);
   transform: translateY(100%);
 }
 
-.slider-text-container h1 {
+.yellow {
+  background-color: var(--yellow);
   color: black;
+}
+
+.black {
+  background-color: black;
+  color: var(--orange);
+}
+
+.slider-text-container h1 {
   text-transform: uppercase;
   font-weight: bolder;
-  font-size: 6.5em;
   letter-spacing: -0.1em;
   font-family: "Grotesk", sans-serif;
 

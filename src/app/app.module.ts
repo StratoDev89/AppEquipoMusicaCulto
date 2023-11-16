@@ -26,10 +26,8 @@ import { AddVerseFormComponent } from './components/add-verse-form/add-verse-for
 import { SingleVerseComponent } from './components/verse/verse.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { MisionComponent } from './components/mision/mision.component';
 import { GridComponent } from './components/grid/grid.component';
 import { CursorComponent } from './components/cursor/cursor.component';
-import { NavItemComponent } from './components/nav-item/nav-item.component';
 import { MagneticComponent } from './components/magnetic/magnetic.component';
 import { AutoSliderComponent } from './components/auto-slider/auto-slider.component';
 
@@ -54,10 +52,8 @@ import { AutoSliderComponent } from './components/auto-slider/auto-slider.compon
     AddVerseFormComponent,
     SingleVerseComponent,
     SearchBarComponent,
-    MisionComponent,
     GridComponent,
     CursorComponent,
-    NavItemComponent,
     MagneticComponent,
     AutoSliderComponent,
   ],

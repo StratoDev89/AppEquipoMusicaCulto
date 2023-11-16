@@ -24,6 +24,8 @@
 
 .header {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 2rem;
   height: fit-content;
   width: 100%;
@@ -103,4 +105,26 @@ footer {
 
 .img {
   width: 100%;
+}
+
+.logo-container {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  @include s.tablet {
+    display: flex;
+  }
+
+  @include s.mobile {
+    display: flex;
+  }
+
+  img {
+    width: 50%;
+    height: 100%;
+    transform: translateY(100%);
+  }
 }

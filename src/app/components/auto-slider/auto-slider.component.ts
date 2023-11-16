@@ -10,11 +10,15 @@ import { GsapAnimationService } from 'src/app/services/gsap-animation.service';
 export class AutoSliderComponent implements OnInit {
   @ViewChild('text1', { static: true }) text1!: ElementRef<HTMLDivElement>;
   @ViewChild('text2', { static: true }) text2!: ElementRef<HTMLDivElement>;
-  @ViewChild('sliderTrack', { static: true }) sliderTrack!: ElementRef<HTMLDivElement>;
+  @ViewChild('sliderTrack', { static: true })
+  sliderTrack!: ElementRef<HTMLDivElement>;
 
   @Input('text') text = '';
   Xpercent = 0;
-  direction = -1;
+  @Input('direction') direction = -1;
+  @Input('speed') speed = 0.1;
+  @Input('bgColor') bgColor: 'yellow' | 'black' = 'yellow';
+  @Input('fontSize') fontSize = 6.5;
 
   constructor(private gsapService: GsapAnimationService) {}
 
@@ -27,7 +31,7 @@ export class AutoSliderComponent implements OnInit {
     }
     gsap.set(this.text1.nativeElement, { xPercent: this.Xpercent });
     gsap.set(this.text2.nativeElement, { xPercent: this.Xpercent });
-    this.Xpercent += 0.1 * this.direction;
+    this.Xpercent += this.speed * this.direction;
     requestAnimationFrame(this.animation);
   };
 
@@ -43,13 +47,9 @@ export class AutoSliderComponent implements OnInit {
     this.gsapService.isIntroDivsAnimationComplete$.subscribe(
       (isIntroComplete: boolean) => {
         if (isIntroComplete) {
-         
-          this.gsapService.revealLogoAnimation(
-            this.sliderTrack.nativeElement,
-          );
+          this.gsapService.revealLogoAnimation(this.sliderTrack.nativeElement);
         }
       }
     );
   }
-
 }
