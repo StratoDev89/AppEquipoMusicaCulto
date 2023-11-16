@@ -35,6 +35,8 @@
 }
 
 .options__li {
+  display: flex;
+  flex-shrink: 0;
   width: 100%;
   text-align: center;
   overflow: hidden;

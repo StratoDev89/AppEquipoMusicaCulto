@@ -113,6 +113,8 @@ footer {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin-top: var(--main-navigation-height);
+  padding: 1rem;
 
   @include s.tablet {
     display: flex;
@@ -123,7 +125,7 @@ footer {
   }
 
   img {
-    width: 50%;
+    max-width: 50%;
     height: 100%;
     transform: translateY(100%);
   }
