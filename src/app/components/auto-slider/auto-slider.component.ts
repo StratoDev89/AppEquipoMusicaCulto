@@ -17,7 +17,7 @@ export class AutoSliderComponent implements OnInit {
   Xpercent = 0;
   @Input('direction') direction = -1;
   @Input('speed') speed = 0.1;
-  @Input('bgColor') bgColor: 'yellow' | 'black' = 'yellow';
+  @Input('bgColor') bgColor: 'none' | 'black' = 'none';
   @Input('fontSize') fontSize = 6.5;
 
   constructor(private gsapService: GsapAnimationService) {}

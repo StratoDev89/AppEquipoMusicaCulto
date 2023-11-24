@@ -12,14 +12,14 @@
   transform: translateY(100%);
 }
 
-.yellow {
-  background-color: var(--yellow);
+.none {
+  background-color: transparent;
   color: black;
 }
 
 .black {
   background-color: black;
-  color: var(--orange);
+  color: black;
 }
 
 .slider-text-container h1 {
