@@ -91,8 +91,6 @@
     color: black;
     font-weight: 400;
   }
-
-
 }
 
 a {
@@ -128,10 +126,13 @@ a {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  column-gap: 1rem;
   align-items: center;
 
   @include s.mobile {
     justify-content: space-between;
+    column-gap: 0;
+
     background-color: green;
   }
 }
