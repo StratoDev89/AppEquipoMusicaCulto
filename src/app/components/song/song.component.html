@@ -1,8 +1,8 @@
 <article class="song-container">
-  <header class="song-title">
+  <header class="song-title" (click)="showInfo()">
     <h1 style="font-weight: 600">{{ song.name }}</h1>
     <div class="options">
-      <div #img class="svg" (click)="showInfo()">
+      <div #img class="svg" >
         <img src="assets/blackArrow.png" alt="white arrow" />
       </div>
     </div>
@@ -85,7 +85,7 @@
 
     >
       <app-button
-      
+
         [color]="'green'"
         (onClick)="onSave()"
         >Save</app-button

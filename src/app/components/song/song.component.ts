@@ -78,12 +78,12 @@ export class SongComponent implements OnInit, AfterViewInit {
     this.isDisabled = !this.isDisabled;
 
     this.songService.update(this.song._id, this.songToUpdate).subscribe({
-      next: (data) => {
+      next: (data:any) => {
         if (data) {
           this.songService.getAll('', '');
         }
       },
-      error: (e) => console.error(e),
+      error: (e:any) => console.error(e),
     });
   }
 
@@ -91,7 +91,7 @@ export class SongComponent implements OnInit, AfterViewInit {
     const canDelete = this.isLogged();
 
     if (canDelete) {
-      this.songService.delete(this.song._id).subscribe((bool) => {
+      this.songService.delete(this.song._id).subscribe((bool:any) => {
         this.wasDeleted = bool;
 
         if (this.wasDeleted) {
