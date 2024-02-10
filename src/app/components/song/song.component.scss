@@ -132,7 +132,5 @@ a {
   @include s.mobile {
     justify-content: space-between;
     column-gap: 0;
-
-    background-color: blue;
   }
 }

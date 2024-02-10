@@ -2,7 +2,7 @@
   <header class="song-title" (click)="showInfo()">
     <h1 style="font-weight: 600">{{ song.name }}</h1>
     <div class="options">
-      <div #img class="svg" >
+      <div #img class="svg">
         <img src="assets/blackArrow.png" alt="white arrow" />
       </div>
     </div>
@@ -80,24 +80,18 @@
         }"
       ></textarea>
     </div>
-    <div
-    class="buttom-container"
-
-    >
+    <div class="buttom-container">
       <app-button
+        [ngStyle]="{ visibility: isEditing ? 'visible' : 'hidden' }"
 
         [color]="'green'"
         (onClick)="onSave()"
         >Save</app-button
       >
-      <app-button  [color]="'black'" (onClick)="onEdit()"
-        >Edit</app-button
-      >
-      <app-button [color]="'red'" (onClick)="onDelete()"
-        >Delete</app-button
-      >
+      <app-button [color]="'black'" (onClick)="onEdit()">Edit</app-button>
+      <app-button [color]="'red'" (onClick)="onDelete()">Delete</app-button>
     </div>
-    <div class="auth-msg"  *ngIf="!canEdit">
+    <div class="auth-msg" *ngIf="!canEdit">
       <p>Go to login first</p>
     </div>
   </div>
@@ -113,4 +107,3 @@
     }"
   />
 </ng-template>
-<!-- *ngIf="isEditing" -->
