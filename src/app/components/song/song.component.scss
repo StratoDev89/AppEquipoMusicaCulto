@@ -91,6 +91,8 @@
     color: black;
     font-weight: 400;
   }
+
+
 }
 
 a {
@@ -120,4 +122,14 @@ a {
   font-family: "Clash Grotesk", sans-serif;
   color: black;
   font-weight: 800;
+}
+
+.buttom-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @include s.mobile {
+  }
 }

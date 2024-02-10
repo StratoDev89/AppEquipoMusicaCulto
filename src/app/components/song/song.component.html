@@ -28,14 +28,6 @@
         *ngIf="!isEditing; else editMode"
         >{{ song.youtubeUrl }}</a
       >
-      <!-- <input
-        [disabled]="isDisabled"
-        [(ngModel)]="song.youtubeUrl"
-        [ngClass]="{
-          'active-editing': isEditing,
-          'disable-editing': !isEditing
-        }"
-      /> -->
     </div>
 
     <div class="info">
@@ -89,17 +81,12 @@
       ></textarea>
     </div>
     <div
-      style="
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-      "
+    class="buttom-container"
+
     >
       <app-button
         style="margin: 0.5rem"
         [color]="'green'"
-        *ngIf="isEditing"
         (onClick)="onSave()"
         >Save</app-button
       >
@@ -110,7 +97,7 @@
         >Delete</app-button
       >
     </div>
-    <div class="auth-msg" style="" *ngIf="!canEdit">
+    <div class="auth-msg"  *ngIf="!canEdit">
       <p>Go to login first</p>
     </div>
   </div>
@@ -126,3 +113,4 @@
     }"
   />
 </ng-template>
+<!-- *ngIf="isEditing" -->
