@@ -29,7 +29,7 @@ export class GsapAnimationService {
       y: '-100%',
       duration: 0.8,
       stagger: 0.09,
-      delay: 1.5,
+      delay: .8,
       ease: CustomEase.create('custom', '.75, 0, .25, 1'),
       onStart: () => {
         gsap.to(divs, {
@@ -55,7 +55,7 @@ export class GsapAnimationService {
       {
         y: '-100%',
         duration: 0.8,
-        delay: 0.6,
+        delay: 0.1,
         ease: CustomEase.get('custom'),
       },
       '1'
