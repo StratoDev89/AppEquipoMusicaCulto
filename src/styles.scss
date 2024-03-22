@@ -9,7 +9,7 @@
 }
 
 :root {
-  --yellow: #182b2a;
+  --yellow: #242b2e;
   --yellowOpacity: rgb(206, 186, 5, 0.814);
   --orange: #fe4f31;
   --orangeOpacity: rgb(254, 79, 49, 0.814);
@@ -30,7 +30,6 @@
   font-size: 100%;
   vertical-align: baseline;
   border: none;
-  // cursor: none;
 }
 
 a {
@@ -48,9 +47,6 @@ html {
   background-color: var(--yellow);
   color: white;
   overflow-x: hidden;
-
-  // scrollbar-color: var(--yellow)  var(--clearBg);
-  // scrollbar-width: thin;
 }
 
 // custom scroll bar safari and Chromer

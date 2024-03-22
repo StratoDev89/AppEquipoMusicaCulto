@@ -12,6 +12,7 @@
   @include s.tablet {
     div:nth-last-child(2) {
       display: none;
+
     }
   }
 
@@ -44,6 +45,7 @@
   z-index: 15;
   transform: translate(-50%, -50%);
   overflow: hidden;
+  visibility: hidden;
 
   img {
     width: 100%;
