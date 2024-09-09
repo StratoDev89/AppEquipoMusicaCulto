@@ -39,6 +39,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(routeTransition);
+
     const token = this.cookieService.getToken();
 
     if (token) {
@@ -59,12 +61,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.mainContainerRef.nativeElement
     );
   }
+  animationData: any;
 
   prepareRoute(outlet: RouterOutlet) {
-    return (
-      outlet &&
-      outlet.activatedRouteData &&
-      outlet.activatedRouteData['animation']
-    );
+    this.animationData = outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }

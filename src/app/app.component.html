@@ -1,8 +1,9 @@
 <app-slide></app-slide>
 <app-grid></app-grid>
 <app-nav></app-nav>
-<main #mainContainerRef [@routeTransition]="prepareRoute(outlet)">
-  <router-outlet #outlet="outlet"></router-outlet>
+<main #mainContainerRef [@routeTransition]="animationData">
+  <router-outlet #outlet="outlet" (activate)="prepareRoute(outlet)"></router-outlet>
   <app-page-transition></app-page-transition>
 </main>
 <app-cursor *ngIf="isDesktop" [navItemComponentRef]="navComponent"></app-cursor>
+
